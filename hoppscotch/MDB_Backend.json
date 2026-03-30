@@ -1,0 +1,273 @@
+{
+  "v": 11,
+  "name": "MDB Backend",
+  "folders": [
+    {
+      "v": 11,
+      "name": "Movies API",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "find by name",
+          "method": "GET",
+          "endpoint": "http://<<host>>/api/movies/rating",
+          "params": [
+            {
+              "key": "name",
+              "value": "The LOTR 2",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "\n\n// Set an environment variable\npw.env.set(\"movieID\", pw.response.body.data.id);",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "create movie",
+          "method": "POST",
+          "endpoint": "http://<<host>>/api/movies",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "// Set an environment variable\r\npw.env.set(\"movieID\", pw.response.body.id);",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Knives Out\",\n  \"releaseDate\": \"2003-12-10\"\n}\n"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "list by rating",
+          "method": "GET",
+          "endpoint": "http://<<host>>/api/movies/top/10",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Movie Reviews API",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "create reviews ",
+          "method": "POST",
+          "endpoint": "http://<<host>>/api/movie-reviews",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"movieId\": \"<<movieID>>\",\n  \"username\": \"michal\",\n  \"rating\": 3,\n  \"comment\": \"ok!\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "update review",
+          "method": "PUT",
+          "endpoint": "http://<<host>>/api/movie-reviews",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"movieId\": \"<<movieID>>\",\n  \"username\": \"qwerty\",\n  \"rating\": 10,\n  \"comment\": \"AAA\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "delete review",
+          "method": "DELETE",
+          "endpoint": "http://<<host>>/api/movie-reviews",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"movieId\": \"<<movieID>>\",\n  \"username\": \"lappid\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "get by user",
+          "method": "GET",
+          "endpoint": "http://<<host>>/api/movie-reviews/lappid/top/10",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authActive": true,
+        "authType": "inherit"
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Users API",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "remove user",
+          "method": "DELETE",
+          "endpoint": "http://<<host>>/api/users/qwerty",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "add user",
+          "method": "POST",
+          "endpoint": "http://<<host>>/api/users",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"username\": \"lappid\",\n  \"firstName\": \"Maks\",\n  \"lastName\": \"Zalietin\",\n  \"age\": 28\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "get user",
+          "method": "GET",
+          "endpoint": "http://<<host>>/api/users/lappid",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    }
+  ],
+  "requests": [],
+  "auth": {
+    "authActive": true,
+    "authType": "none"
+  },
+  "headers": [],
+  "variables": [],
+  "description": ""
+}
