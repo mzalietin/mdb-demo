@@ -75,8 +75,6 @@ Acknowledged but unaddressed concerns:
 
 ## REST API
 
-Environment: `mdb-aggregator` running on `localhost`
-
 | Desc                        | Method | URL                                                              | Body                                                                              |
 |-----------------------------|:------:|:-----------------------------------------------------------------|:----------------------------------------------------------------------------------|
 | create movie                |  POST  | `http://localhost:8080/api/movies`                               | {"name":"string","releaseDate":"yyyy-mm-dd"}                                      |
