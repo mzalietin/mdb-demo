@@ -1,9 +1,9 @@
 {
-  "v": 11,
+  "v": 12,
   "name": "MDB Backend",
   "folders": [
     {
-      "v": 11,
+      "v": 12,
       "name": "Movies API",
       "folders": [],
       "requests": [
@@ -15,7 +15,7 @@
           "params": [
             {
               "key": "name",
-              "value": "The LOTR 2",
+              "value": "The LOTR",
               "active": true,
               "description": ""
             }
@@ -50,7 +50,7 @@
           },
           "body": {
             "contentType": "application/json",
-            "body": "{\n  \"name\": \"Knives Out\",\n  \"releaseDate\": \"2003-12-10\"\n}\n"
+            "body": "{\n  \"name\": \"Inception\",\n  \"releaseDate\": \"2003-12-10\"\n}\n"
           },
           "requestVariables": [],
           "responses": {},
@@ -84,10 +84,12 @@
       },
       "headers": [],
       "variables": [],
-      "description": null
+      "description": null,
+      "preRequestScript": "",
+      "testScript": ""
     },
     {
-      "v": 11,
+      "v": 12,
       "name": "Movie Reviews API",
       "folders": [],
       "requests": [
@@ -106,7 +108,7 @@
           },
           "body": {
             "contentType": "application/json",
-            "body": "{\n  \"movieId\": \"<<movieID>>\",\n  \"username\": \"michal\",\n  \"rating\": 3,\n  \"comment\": \"ok!\"\n}"
+            "body": "{\n  \"movieId\": 2,\n  \"username\": \"test2\",\n  \"rating\": 9,\n  \"comment\": \"ok!\"\n}"
           },
           "requestVariables": [],
           "responses": {},
@@ -116,7 +118,7 @@
           "v": "17",
           "name": "update review",
           "method": "PUT",
-          "endpoint": "http://<<host>>/api/movie-reviews",
+          "endpoint": "http://<<host>>/api/movie-reviews/a6479171-0033-41e4-b415-1e4ed0c604b5",
           "params": [],
           "headers": [],
           "preRequestScript": "",
@@ -127,7 +129,7 @@
           },
           "body": {
             "contentType": "application/json",
-            "body": "{\n  \"movieId\": \"<<movieID>>\",\n  \"username\": \"qwerty\",\n  \"rating\": 10,\n  \"comment\": \"AAA\"\n}"
+            "body": "{\n  \"rating\": 5,\n  \"comment\": \"B\"\n}"
           },
           "requestVariables": [],
           "responses": {},
@@ -137,7 +139,7 @@
           "v": "17",
           "name": "delete review",
           "method": "DELETE",
-          "endpoint": "http://<<host>>/api/movie-reviews",
+          "endpoint": "http://<<host>>/api/movie-reviews/a6479171-0033-41e4-b415-1e4ed0c604b5",
           "params": [],
           "headers": [],
           "preRequestScript": "",
@@ -147,8 +149,8 @@
             "authActive": true
           },
           "body": {
-            "contentType": "application/json",
-            "body": "{\n  \"movieId\": \"<<movieID>>\",\n  \"username\": \"lappid\"\n}"
+            "contentType": null,
+            "body": null
           },
           "requestVariables": [],
           "responses": {},
@@ -158,7 +160,7 @@
           "v": "17",
           "name": "get by user",
           "method": "GET",
-          "endpoint": "http://<<host>>/api/movie-reviews/lappid/top/10",
+          "endpoint": "http://<<host>>/api/movie-reviews/test1/top/10",
           "params": [],
           "headers": [],
           "preRequestScript": "",
@@ -177,15 +179,17 @@
         }
       ],
       "auth": {
-        "authActive": true,
-        "authType": "inherit"
+        "authType": "inherit",
+        "authActive": true
       },
       "headers": [],
       "variables": [],
-      "description": null
+      "description": null,
+      "preRequestScript": "",
+      "testScript": ""
     },
     {
-      "v": 11,
+      "v": 12,
       "name": "Users API",
       "folders": [],
       "requests": [
@@ -193,7 +197,7 @@
           "v": "17",
           "name": "remove user",
           "method": "DELETE",
-          "endpoint": "http://<<host>>/api/users/qwerty",
+          "endpoint": "http://<<host>>/api/users/test",
           "params": [],
           "headers": [],
           "preRequestScript": "",
@@ -225,7 +229,7 @@
           },
           "body": {
             "contentType": "application/json",
-            "body": "{\n  \"username\": \"lappid\",\n  \"firstName\": \"Maks\",\n  \"lastName\": \"Zalietin\",\n  \"age\": 28\n}"
+            "body": "{\n  \"username\": \"test2\",\n  \"firstName\": \"Maks\",\n  \"lastName\": \"Zalietin\",\n  \"age\": 28\n}"
           },
           "requestVariables": [],
           "responses": {},
@@ -235,7 +239,7 @@
           "v": "17",
           "name": "get user",
           "method": "GET",
-          "endpoint": "http://<<host>>/api/users/lappid",
+          "endpoint": "http://<<host>>/api/users/test",
           "params": [],
           "headers": [],
           "preRequestScript": "",
@@ -259,15 +263,19 @@
       },
       "headers": [],
       "variables": [],
-      "description": null
+      "description": null,
+      "preRequestScript": "",
+      "testScript": ""
     }
   ],
   "requests": [],
   "auth": {
-    "authActive": true,
-    "authType": "none"
+    "authType": "none",
+    "authActive": true
   },
   "headers": [],
   "variables": [],
-  "description": ""
+  "description": "",
+  "preRequestScript": "",
+  "testScript": ""
 }
