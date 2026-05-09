@@ -80,18 +80,18 @@ Acknowledged but unaddressed concerns:
 
 ## REST API
 
-| Desc                        | Method | URL                                                              | Body                                                                              |
-|-----------------------------|:------:|:-----------------------------------------------------------------|:----------------------------------------------------------------------------------|
-| create movie                |  POST  | `http://localhost:8080/api/movies`                               | {"name":"string","releaseDate":"yyyy-mm-dd"}                                      |
-| create review               |  POST  | `http://localhost:8080/api/movie-reviews`                        | {"movieId":"string","username":"string","rating":"int [1-10]","comment":"string"} |
-| update review               |  PUT   | `http://localhost:8080/api/movie-reviews`                        | {"movieId":"string","username":"string","rating":"int [1-10]","comment":"string"} |
-| delete review               | DELETE | `http://localhost:8080/api/movie-reviews`                        | {"movieId":"string","username":"string"}                                          |
-| create user                 |  POST  | `http://localhost:8080/api/users`                                | {"username":"string","firstName":"string","lastName":"string","age":"int"}        |
-| delete user                 | DELETE | `http://localhost:8080/api/users/{username}`                     |                                                                                   |
-| movie rating by name        |  GET   | `http://localhost:8080/api/movies/rating?name={movieName}`       |                                                                                   |
-| top movies by avg rating    |  GET   | `http://localhost:8080/api/movies/top/{limit}`                   |                                                                                   |
-| top movies by user's rating |  GET   | `http://localhost:8080/api/movie-reviews/{username}/top/{limit}` |                                                                                   |
-| user info by username       |  GET   | `http://localhost:8080/api/users/{username}`                     |                                                                                   |
+| Desc                        | Method | URL                                                              | Body                                                                            | Success Response                                  |
+|-----------------------------|:------:|:-----------------------------------------------------------------|:--------------------------------------------------------------------------------|---------------------------------------------------|
+| create movie                |  POST  | `http://localhost:8080/api/movies`                               | {"name":"string","releaseDate":"yyyy-mm-dd"}                                    | `201 Created` and `{movie ID}`                    |
+| create review               |  POST  | `http://localhost:8080/api/movie-reviews`                        | {"movieId":"long","username":"string","rating":"int [1-10]","comment":"string"} | `201 Created` and `{review ID}`                   |
+| update review               |  PUT   | `http://localhost:8080/api/movie-reviews/{id}`                   | {"rating":"int [1-10]","comment":"string"}                                      | `204 No Content`                                  |
+| delete review               | DELETE | `http://localhost:8080/api/movie-reviews/{id}`                   |                                                                                 | `200 OK`                                          |
+| create user                 |  POST  | `http://localhost:8080/api/users`                                | {"username":"string","firstName":"string","lastName":"string","age":"int"}      | `201 Created`                                     |
+| delete user                 | DELETE | `http://localhost:8080/api/users/{username}`                     |                                                                                 | `200 OK`                                          |
+| movie rating by name        |  GET   | `http://localhost:8080/api/movies/rating?name={exactMovieName}`  |                                                                                 | `200 OK` and `{avg rating}`                       |
+| top movies by avg rating    |  GET   | `http://localhost:8080/api/movies/top/{limit}`                   |                                                                                 | `200 OK` and `{top K movies by avg rating desc}`  |
+| top movies by user's rating |  GET   | `http://localhost:8080/api/movie-reviews/{username}/top/{limit}` |                                                                                 | `200 OK` and `{top K movies by user rating desc}` |
+| user info by username       |  GET   | `http://localhost:8080/api/users/{username}`                     |                                                                                 | `200 OK` and `{user info}`                        |
 
 # Run
 
