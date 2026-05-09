@@ -74,7 +74,16 @@ Acknowledged but unaddressed concerns:
 <details>
   <summary>Click to expand</summary>
 
-![Alt text of the image](https://github.com/mzalietin/mdb-demo/blob/2bc910ca8fd9d656ca6ce7d569f63c5c76642277/diagram/mdb-backend.jpg)
+![Alt text of the image](https://github.com/mzalietin/mdb-demo/blob/main/diagram/mdb-backend.jpg)
+
+</details>
+
+## Relational data model
+
+<details>
+  <summary>Click to expand</summary>
+
+![Alt text of the image](https://github.com/mzalietin/mdb-demo/blob/main/diagram/core-data-model.jpg)
 
 </details>
 
